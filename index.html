@@ -399,16 +399,60 @@
               </li>
             </ul>
           </li>
+          <li> 
+            <form class="signup-form" name="signup-form" autocomplete="on" novalidate>
+         <div> <label class="signup-title" for="email">Подпишитесь на рассылку</label></div>
+         <div> <input class="signup-field"type="email" name="email" placeholder="E-mail">
+          <button class="submit-btn" type="submit">Подписаться <svg class="btn-icon">
+            <use href="./images/icons.svg#icon-signup"></use>
+                  </svg>
+          </svg></button></div>
+        </form></li>
         </ul>
+       
       </div>
     </footer>
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button type="button" data-modal-close class="close-btn">
+        <button  type="button" data-modal-close class="close-btn">
           <svg class="close-btn-icon">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
-        </button>
+            </button>
+          <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+          <form class="modal-form" name="modal-form" autocomplete="on" novalidate>
+            <label class="modal-label" for="username">Имя</label>
+           <div class="modal-icon-wrp"> <input class="modal-input" type="text" id="username" name="username">
+             <svg class="modal-icon">
+            <use href="./images/icons.svg#icon-user"></use>
+          </svg>
+        </div>
+            <label class="modal-label" for="modal-phone-number">Телефон</label>
+            <div class="modal-icon-wrp">
+              <input class="modal-input" type="tel" id="modal-pnone-number" name="phone-number">
+             <svg class="modal-icon">
+            <use href="./images/icons.svg#icon-tel"></use>
+          </svg></div>
+            <label class="modal-label" for="email">Почта</label>
+           <div class="modal-icon-wrp"> <input class="modal-input" type="email" name="modal-email" id="modal-email">
+             <svg class="modal-icon">
+            <use href="./images/icons.svg#icon-mail"></use>
+          </svg></div>
+            <label class="modal-label" for="comment">Комментарий</label>
+            <textarea class="modal-input text" type="text" name="comment" rows="5" placeholder="Введите текст"></textarea>
+            
+            <div class="agr-wrp">
+              <input  type="checkbox" name="user-agreement" class="checkbox visually-hidden" id="user-agreement">
+            <label for="user-agreement" class="user-agreement" >
+              <span><svg class="checked-icon" >
+            <use href="./images/icons.svg#icon-check"></use>
+          </svg></span>
+             Соглашаюсь с рассылкой и принимаю  
+            <a class="user-agreement-link" href="#">Условия договора</a>
+            </label></div>
+          </form>
+          <button class="modal-submit-btn" type="submit">Отправить</button>
+      
       </div>
     </div>
     <script src="./js/modal.js"></script>
