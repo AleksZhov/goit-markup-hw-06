@@ -11,7 +11,7 @@
   --client-color: #afb1b8;
 }
 
-/*Задание документа общего цвета стиля и фона*/
+/*--------------Задание документу общих значений и обнулений----------------------------*/
 body {
   color: var(--primary-text-color);
   background-color: var(--white-color);
@@ -28,13 +28,9 @@ ul {
 a {
   text-decoration: none;
 }
-li {
-  margin-left: 0px;
-}
-h1,
-h2,
-p,
-h3 {
+li {margin-left: 0px;}
+
+h1,h2,p,h3 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -52,17 +48,17 @@ h3 {
   padding-right: 15px;
 }
 
-/*Выстраиваем ссылки в одну строку*/
-.container.header,
-.header-construction,
-.site-nav-list,
+/*------------------Оформление первой чати хедера и навигационного меню-------------------------*/
+.container.header__container,
+.header__nav,
+.page-header__list,
 .contacts {
   display: flex;
   align-items: center;
 }
 
-/*Задаем отступы для ссылок навигационного меню*/
-.site-nav-list > .item:not(:last-child) {
+/*Задаем отступы для элементов навигационного меню*/
+.page-header__item:not(:last-child) {
   margin-right: 50px;
 }
 
@@ -74,53 +70,45 @@ h3 {
 }
 
 /*Оформление логотипа*/
-.page-header .logo {
+.logo {
   color: var(--primary-text-color);
   margin-right: 93px;
-
   font-family: 'Raleway', sans-serif;
   text-decoration: none;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
 }
-.page-header .logo:hover,
-.page-header .logo:focus {
-  color: var(--primary-text-color);
-}
+
 /*Задание цвета первой части логотипа */
-span {
+.accent-text {
   color: var(--accent-color);
 }
 
-.item > .link {
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
 
 /*Задание ссылкам хедера основного цвета и цвета выделения и текста*/
-.page-header a {
+.page-header__link {
+  padding-top: 32px;
+  padding-bottom: 32px;
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-}
-.page-header .link {
-  color: var(--primary-text-color);
+   color: var(--primary-text-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.page-header .link:hover,
-.page-header .link:focus {
-  color: var(--accent-color);
-}
-.site-nav-list .link {
   position: relative;
 }
-.site-nav-list .link.current {
+
+.page-header__link:hover,
+.page-header__link:focus {
   color: var(--accent-color);
 }
-.site-nav-list .link.current::after {
+
+.current {
+  color: var(--accent-color);
+}
+.current::after {
   position: absolute;
   content: '';
   display: block;
@@ -135,47 +123,48 @@ span {
 .contacts {
   margin-left: auto;
 }
-.contacts > .contact-item:not(:last-child) {
+.contacts__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.contact-item {
+/*-------------------Оформление верхнего блока контактов---------------------------*/
+.contacts__item {
   color: var(--secondary-text-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.contact-item:hover,
-.contact-item:focus {
+.contacts__item:hover,
+.contacts__item:focus {
   color: var(--accent-color);
 }
 
-.contact-mail,
-.contact-tel {
+.contacts__mail,
+.contacts__tel {
   color: inherit;
 }
-.contact-mail:focus,
-.contact-tel:focus {
+    .contacts__mail:focus,
+.contacts__tel:focus {
   color: var(--accent-color);
   fill: var(--accent-color);
+  
 }
+.contacts__icon {
+  display: inline-block;
+  margin-right: 10px;
+   fill: currentColor;}
 
-.contact-icon-smartphone {
-  display: inline-block;
-  margin-right: 10px;
+.contacts__icon--smartphone {
   width: 10px;
-  height: 16px;
-  fill: currentColor;
+  height: 16px; 
 }
-.contact-icon-envelope {
-  display: inline-block;
-  margin-right: 10px;
+.contacts__icon--envelope {
   width: 16px;
   height: 12px;
-  fill: currentColor;
 }
 
 /*---------------Оформление блока героя----------------*/
 .hero {
-  background-image: linear-gradient(to bottom, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  background-image: linear-gradient(to bottom, rgba(47, 48, 58, 0.4),
+   rgba(47, 48, 58, 0.4)),
     url(../images/bgnd-img.jpg);
   max-width: 1600px;
   background-repeat: no-repeat;
@@ -183,27 +172,24 @@ span {
   margin: 0 auto;
   padding-top: 200px;
   padding-bottom: 200px;
-
   text-align: center;
 }
 
-.hero-title {
+.hero__title {
   color: var(--white-color);
   width: 696px;
-
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 /*Оформление кнопки героя*/
-.hero-btn {
+.hero__btn {
   color: var(--white-color);
   background-color: var(--accent-color);
   min-width: 200px;
@@ -213,7 +199,6 @@ span {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-
   display: inline-block;
   align-items: center;
   justify-content: center;
@@ -222,11 +207,11 @@ span {
 
 /*---------------Оформление блока преимуществ----------------*/
 
-.section.preferences {
+.preferences {
   padding-bottom: 0;
 }
 
-.preferences-title {
+.preferences__title {
   text-align: center;
 }
 
@@ -243,15 +228,15 @@ span {
   margin: -1px;
 }
 
-.preferences-list {
+.preferences__list {
   display: flex;
   gap: 30px;
 }
 
-.preference-item {
+.preferences__item {
   width: 270px;
 }
-.icon-bgnd {
+.preferences__bgnd {
   display: flex;
   background-color: var(--background-color);
   width: 270px;
@@ -260,12 +245,12 @@ span {
   justify-content: center;
   align-items: center;
 }
-.preferences-icon {
+.preferences__icon {
   width: 70px;
   height: 70px;
 }
 
-.preference-title {
+.preferences__descr {
   margin: 30px 0 0 0;
   font-weight: 700;
   font-size: 14px;
@@ -274,20 +259,33 @@ span {
   margin-bottom: 10px;
 }
 
-.preference-text {
+.preferences__text {
   color: var(--secondary-text-color);
   font-size: 14px;
   line-height: 1.71;
 }
 
+
+/*-------------------Оформление заголовков секций-------------------------*/
+.tasks__title, .team__title, .clients__title {
+  margin-top: 0px;
+  margin-bottom: 50px;
+  margin-block-start: 0px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+}
+ 
+
 /*-----------------------------Оформление наших задач-------------------*/
 
-.task-list {
+.tasks__list {
   display: flex;
   gap: 30px;
   position: relative;
 }
-.task-title {
+.tasks__name {
   position: absolute;
   display: inline-block;
   width: 370px;
@@ -304,7 +302,7 @@ span {
   color: var(--white-color);
 }
 
-.task-img {
+.tasks__img {
   display: block;
 }
 /*-----------------------------Оформление блока команды-------------------*/
@@ -313,17 +311,13 @@ span {
   background-color: var(--secondary-background-color);
 }
 
-.team-list {
+.team__list {
   display: flex;
   gap: 30px;
 }
 
-.team-title {
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-.team-item {
+/*--------------------Оформление учасника команды--------------------*/
+.member {
   margin-left: 0px;
   padding-bottom: 30px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -332,44 +326,34 @@ span {
   background-color: var(--white-color);
 }
 
-.team-img {
+.member__photo {
   display: block;
 }
 
-/*Оформление заголовков секций*/
-.section-title {
-  margin-top: 0px;
-  margin-bottom: 50px;
-  margin-block-start: 0px;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-}
 
-/*Оформление команды*/
-.team-title {
+.member__name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
-  /* identical to box height */
   text-align: center;
+    margin-top: 30px;
+  margin-bottom: 10px;
 }
-.team-descr {
+.member__position {
   color: var(--secondary-text-color);
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
 }
 
-.social-link-list {
+.socials {
   display: flex;
   margin: 16px auto 0px;
   width: 206px;
   justify-content: space-between;
 }
 
-.social-link-item {
+.socials__item {
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -379,41 +363,34 @@ span {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.social-link-icon {
+.socials__icon {
   width: 20px;
   height: 20px;
   fill: var(--client-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-link-item:hover,
-.social-link-item:focus {
+.socials__item:hover,
+.socials__item:focus {
   background-color: var(--accent-color);
 }
-.social-link-link {
+.socials__link {
   display: block;
   margin-top: 9px;
 }
 
-.social-link-item:hover .social-link-icon {
+.socials__item:hover .socials__icon {
   fill: var(--white-color);
 }
 
 /*--------------------------Oформление секции наши клиенты---------------------*/
-.clients-title {
-  margin-bottom: 50px;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  letter-spacing: 0.03em;
-}
 
-.clients-list {
+
+.clients__list {
   display: flex;
   gap: 30px;
 }
-.client-link {
+.clients__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -424,110 +401,77 @@ span {
   color: var(--client-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.client-link:hover,
-.client-link:focus {
+.clients__link:hover,
+.clients__link:focus {
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
 }
 
-.client-icon {
+.clients__icon {
   width: 106px;
   height: 60px;
   fill: currentColor;
 }
 
-/*--------------------------Задаем фон для футера---------------------*/
+/*--------------------------Офомпление футера---------------------*/
 .page-footer {
   background-color: var(--dark-background-color);
   padding-top: 60px;
   padding-bottom: 60px;
 }
-
+/*Свойства логотипа*/
+.logo--lower {color:var(--white-color);
+}
+.address {margin-top: 20px;}
 /*Задание ссылкам футера основного цвета и цвета выделения*/
-.page-footer a {
+.address__link {
   color: var(--white-color);
   display: inline-block;
   font-size: 14px;
   line-height: 1.71;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* or 171% */
-}
-.footer-wrp {
-  display: flex;
-  align-items: baseline;
-}
-.page-footer .link-mail:hover,
-.page-footer .link-mail:focus {
-  color: var(--accent-color);
-}
-.page-footer .link-tel:hover,
-.page-footer .link-tel:focus {
-  color: var(--accent-color);
-}
-
-.social-title {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--white-color);
-  margin-bottom: 20px;
-}
-
-.block-address {
-  margin-right: 70px;
-}
-.block-join {
-  margin-right: 93px;
-}
-/*Свойства логотипа*/
-.page-footer .logo {
-  display: inline-block;
-  font-family: 'Raleway';
   font-style: normal;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-  margin-bottom: 20px;
 }
 
 /* Цвет почты и номера телефона*/
+.address__item:not(:first-child)>.address__link {color:var(--address-color);
+margin-top: 9px;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 
-.page-footer .link-mail,
-.page-footer .link-tel {
-  margin-top: 9px;
-  color: var(--address-color);
+.address__item:not(:first-child)>.address__link:hover,
+.address__item:not(:first-child)>.address__link:focus { color: var(--accent-color);}
+
+.page-footer__wrp {
+  display: flex;
+  align-items: baseline;
 }
 
-/*Нормализация текста адреса*/
-address {
-  font-style: normal;
-}
-.page-footer .social-link-item {
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.page-footer .social-link-item:hover,
-.page-footer .social-link-item:focus {
-  background-color: var(--accent-color);
-}
-/*--------------------------Блок подписки--------------------------------*/
-.signup-form {
-  display: block;
-}
-.signup-title {
+
+.socials__title, .signup__title {
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.14px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  line-height: 1.14;
+    text-transform: uppercase;
   color: var(--white-color);
-  display: block;
+  margin-bottom: 20px;
 }
 
-.signup-field {
-  display: inline-block;
+.page-footer__item--left {
+  margin-right: 70px;
+}
+.page-footer__item--center {
+  margin-right: 93px;
+}
+.socials__item--dark { background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+
+/*--------------------------Блок подписки--------------------------------*/
+.signup__form {
+  display: flex;
+}
+
+.signup__field {
+ 
   min-width: 358px;
   height: 50px;
   padding-left: 16px;
@@ -539,12 +483,13 @@ address {
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-  margin-top: 20px;
+  
 }
 
-.submit-btn {
-  min-width: 200px;
-  display: inline-flex;
+.signup__submit-btn {
+  display: flex;
+  width: 200px;
+  height: 50px;
   align-items: center;
   margin-left: 12px;
   padding: 9px 27px;
@@ -558,7 +503,7 @@ address {
   border-radius: 4px;
 }
 
-.btn-icon {
+.signup__icon {
   width: 24px;
   height: 24px;
   fill: currentColor;
